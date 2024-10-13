@@ -1,4 +1,13 @@
 .main {
   min-height: 100vh;
   background-image: url(../../../../public/signin-bg.jpg);
+  background-size: cover;
+}
+
+.g-img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border: 1px solid transparent;
+  width: 36px;
 }
