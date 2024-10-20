@@ -2,16 +2,16 @@
   <div class="container">
     <div class="d-flex justify-content-between pt-4 pb-4">
       <p class="text-white fw-bold fs-3" role="button" routerLink="">WUZZUF</p>
-      <button class="btn btn-light text-secondary rounded-sm">
+      <button class="btn btn-light btn-sm text-secondary rounded-sm">
         For Employers <i class="fa-solid fa-arrow-right"></i>
       </button>
     </div>
     <div class="d-flex justify-between">
-      <div class="col-6">
+      <div class="f-style col-6 d-style">
         <h3 class="h3-style text-white mb-4 mt-4">
           Find the Best Jobs in Egypt
         </h3>
-        <ul class="text-white mb-2">
+        <ul class="text-white mb-4">
           <li>
             <i class="fa-solid fa-circle-check"></i> Apply for jobs easily
           </li>
@@ -42,24 +42,29 @@
           <img src="Dhl.png" alt="Dhl/image" />
         </div>
       </div>
-      <div class="bg-light p-4 rounded-1 col-6">
+      <div
+        class="bg-white p-4 rounded-1 col-lg-6 col-md-12 position-relative mb-1 overflow-hidden"
+      >
         <p class="mb-3 text-center" style="font-size: 19px">
           Create your account and start applying for jobs
         </p>
 
-        <div class="w-100 bg-primary rounded-0 position-relative" role="button">
+        <div
+          style="height: 36px"
+          class="d-flex justify-content-center align-items-center w-100 bg-primary rounded-0 position-relative"
+          role="button"
+        >
           <img
-            class="img-s"
             src="4ed17f1480990b96fc90612ef2f5b5e7.svg"
-            class="position-absolute start-0 top-0"
+            class="img-s position-absolute start-0 top-0"
             alt="google/image"
           />
           <p class="text-white text-center">Sign up with Google</p>
         </div>
         <p class="text-center text-secondary">or</p>
         <form>
-          <div class="mb-2 d-flex gap-2">
-            <div class="col-6">
+          <div class="mb-3 d-flex gap-2 container-fulid">
+            <div class="col-lg-6">
               <label for="first-name" class="fw-bold">Frist name</label
               ><input
                 class="form-control rounded-1 text-sm"
@@ -67,7 +72,7 @@
                 id="first-name"
               />
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
               <label for="last-name" class="fw-bold">Last name</label
               ><input
                 class="form-control rounded-1"
@@ -76,7 +81,7 @@
               />
             </div>
           </div>
-          <div class="mb-2">
+          <div class="mb-3">
             <label class="fw-bold" for="email">Email</label
             ><input
               type="email"
@@ -85,20 +90,30 @@
               id="email"
             />
           </div>
-          <div class="mb-2">
+          <div class="mb-3">
             <label class="fw-bold" for="password">Password</label>
             <div class="input-group">
               <input
                 id="password"
                 class="form-control rounded-1"
-                type="password"
+                [type]="passwordVisibility"
               />
-              <span role="button" class="input-group-text"
-                ><i class="fa-duotone fa-solid fa-eye"></i
+              <span
+                role="button"
+                (click)="changePasswordVisibility()"
+                class="input-group-text"
+                ><i
+                  [ngClass]="
+                    passwordVisibility === 'password'
+                      ? 'fa-eye'
+                      : 'fa-eye-slash'
+                  "
+                  class="fa-duotone fa-solid"
+                ></i
               ></span>
             </div>
           </div>
-          <div class="mb-3">
+          <div class="mb-4">
             <label for="job-title" class="fw-bold">
               What job titles are you looking for?
             </label>
@@ -110,11 +125,32 @@
             />
           </div>
           <div>
-            <button class="w-100 btn btn-primary rounded-1">
+            <button class="w-100 btn btn-primary rounded-1 mb-2">
               Create Account
             </button>
           </div>
         </form>
+        <div class="text-center">
+          <small class="text-secondary"
+            >By signing up, you agree to our
+            <span class="text-primary">Terms and Conditions </span></small
+          >
+        </div>
+        <hr />
+        <div class="text-center mb-5">
+          <p class="fw-bold">
+            Already on WUZZUF?
+            <span role="button" routerLink="/login" class="text-primary"
+              >Log in</span
+            >
+          </p>
+        </div>
+        <div class="emp-s text-center">
+          <small
+            >Looking to post jobs?
+            <span class="text-primary">Create an Employer Account. </span>
+          </small>
+        </div>
       </div>
     </div>
   </div>

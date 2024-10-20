@@ -19,8 +19,17 @@
   color: white;
 }
 
+label {
+  font-size: 14px;
+}
+
 div ul li {
   font-size: 20px;
+}
+
+div ul {
+  list-style: none;
+  padding: 0px;
 }
 
 div ul li i {
@@ -38,4 +47,22 @@ div ul li i {
   margin-right: 24px;
   margin-bottom: 24px;
   border-radius: 4px;
+}
+
+.emp-s {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(230, 239, 255);
+}
+
+@media (max-width: 990px) {
+  .d-style {
+    display: none;
+  }
+  .f-style {
+    width: 100%;
+  }
 }
