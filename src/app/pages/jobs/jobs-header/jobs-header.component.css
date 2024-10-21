@@ -1,0 +1,11 @@
+.main {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  position: absolute;
+  top: -145px;
+}
