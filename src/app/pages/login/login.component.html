@@ -1,19 +1,23 @@
-<div class="main flex justify-center items-center min-h-screen">
+<div class="main container-fulid">
   <div
-    class="content-center leading-8 grid grid-cols-1 gap-4 p-6 md:p-8 lg:p-10 w-full max-w-md"
+    class="leading-8 grid grid-cols-1 gap-4 p-6 md:p-8 lg:p-10 w-full max-w-md"
   >
-    <div role="button" routerLink="/">
+    <div class="p-2">
       <p
-        class="text-4xl md:text-5xl lg:text-6xl text-center text-white font-bold"
+        routerLink="/"
+        role="button"
+        class="fw-bold fs-1 text-center text-white"
       >
         WUZZUF
       </p>
     </div>
-    <div class="bg-white p-6 rounded-sm">
-      <p class="text-center p-3">Welcome Back</p>
 
-      <button
-        class="text-white text-sm p-2 relative content-center w-full bg-sky-600 hover:bg-sky-700"
+    <div class="bg-white p-4 rounded-1 col-lg-4 col-md-12 col-sm-12 container">
+      <p class="text-center p-2 fs-5 text-black">Welcome Back</p>
+      <div
+        role="button"
+        class="text-white position-relative bg-primary text-center"
+        style="height: 36px"
       >
         <img
           class="g-img"
@@ -21,75 +25,65 @@
           alt="image"
         />
         Sign in with Google
-      </button>
-
-      <div class="relative h-8">
-        <p class="text-slate-500 text-center z-10">or</p>
       </div>
 
-      <form class="grid gap-3" (submit)="onSubmit()" [formGroup]="loginForm">
-        <div class="relative">
-          <label class="block">
-            <span class="font-bold block text-sm text-slate-600"> Email </span>
+      <div class="p-1">
+        <p class="text-secondary text-center">or</p>
+      </div>
+
+      <form (submit)="onSubmit()" [formGroup]="loginForm">
+        <div class="position-relative mb-3">
+          <label class="fw-bold text-secondary" for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control col-12 rounded-1"
+            placeholder="Email"
+            formControlName="email"
+            [ngClass]="{
+              'border-danger':
+                (email?.touched || email?.dirty) && email?.invalid
+            }"
+          />
+          @if(email?.touched || email?.dirty && email?.invalid) {
+          @if(email?.errors?.['required']) {
+          <small class="text-danger absolute top-14">email is required</small>
+          }@else if(email?.errors?.['pattern']){
+          <small class="text-danger absolute top-14">invalid email</small>
+          } }
+        </div>
+
+        <div class="mb-3">
+          <label class="text-secondary fw-bold" style="font-size: 14px"
+            >Password</label
+          >
+          <span class="font-bold block text-sm text-slate-600"> </span>
+          <div class="position-relative">
             <input
-              type="email"
+              [type]="type"
               name="email"
-              class="mt-1 invalid:border-red-600 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-sm sm:text-sm focus:ring-1"
-              placeholder="Email"
-              formControlName="email"
+              class="form-control col-12 position-relative rounded-1"
+              placeholder="Password"
+              formControlName="password"
               [ngClass]="{
-                'border-red-500 focus:border-red-500 focus:ring-red-500':
-                  (email?.touched || email?.dirty) && email?.invalid
+                'border-danger':
+                  (password?.touched || password?.dirty) && password?.invalid
               }"
             />
-            @if(email?.touched || email?.dirty && email?.invalid) {
-            @if(email?.errors?.['required']) {
-            <small class="text-red-600 absolute top-14"
-              >email is required</small
-            >
-            }@else if(email?.errors?.['pattern']){
-            <small class="text-red-600 absolute top-14">invalid email</small>
-            } }
-          </label>
+            <i
+              role="button"
+              class="position-absolute fa-solid text-secondary top-50 end-0 translate-middle"
+              [ngClass]="type === 'text' ? 'fa-eye-slash' : 'fa-eye'"
+              (click)="passwordVisibility()"
+            ></i>
+          </div>
+          @if(password?.touched || password?.dirty && password?.invalid){
+          @if(password?.errors?.['required']){
+          <small class="text-danger">password is required</small>
+          } }
         </div>
 
-        <div class="relative">
-          <label class="block">
-            <span class="font-bold block text-sm text-slate-600">
-              Password
-            </span>
-            <div class="relative">
-              <input
-                [type]="type"
-                name="email"
-                class="relative mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-sm sm:text-sm focus:ring-1"
-                placeholder="Password"
-                formControlName="password"
-                [ngClass]="{
-                  'border-red-500 focus:border-red-500 focus:ring-red-500':
-                    (password?.touched || password?.dirty) && password?.invalid
-                }"
-              />
-              <i
-                role="button"
-                class="fa-solid text-slate-500 absolute top-2.5 right-2"
-                [ngClass]="type === 'text' ? 'fa-eye-slash' : 'fa-eye'"
-                (click)="passwordVisibility()"
-              ></i>
-            </div>
-            @if(password?.touched || password?.dirty && password?.invalid){
-            @if(password?.errors?.['required']){
-            <small class="text-red-600 absolute top-14"
-              >password is required</small
-            >
-            } }
-          </label>
-        </div>
-
-        <button
-          [disabled]="isLoading"
-          class="rounded-sm mt-2 bg-blue-600 hover:bg-blue-700 text-white p-1 w-full"
-        >
+        <button [disabled]="isLoading" class="btn btn-primary w-100 rounded-1">
           @if(isLoading){ @if(success){
           <i class="fa-solid fa-check"></i>
           }@else {
@@ -100,16 +94,22 @@
           } }@else { Sign in }
         </button>
       </form>
-      <p class="text-center p-3 text-sky-700 font-bold text-sm">
-        <span [routerLink]="['/forget-password']" role="button">
-          Forget password?</span
+      <p class="text-center p-3">
+        <small
+          [routerLink]="['/forget-password']"
+          class="text-primary fw-bold"
+          role="button"
+        >
+          Forget password?</small
         >
       </p>
-      <p class="font-bold text-sm text-center pt-4">
-        New to WUZZUF?
-        <span routerLink="/register" role="button" class="text-sky-700"
-          >Join now</span
-        >
+      <p class="text-center">
+        <small class="fw-bold text-black text-center">
+          New to WUZZUF?
+          <span routerLink="/register" role="button" class="text-primary"
+            >Join now</span
+          >
+        </small>
       </p>
     </div>
   </div>
