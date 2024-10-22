@@ -1,4 +1,36 @@
-<div class="main container-fulid">
+<div class="main container-fulid d-flex align-items-center">
   <img src="jobs-landing-page.webp" alt="image/landing-page" />
-  <h1>hello</h1>
+  <div class="bg"></div>
+  <div class="container position-relative">
+    <div class="d-flex position-relative justify-content-center">
+      <div class="d-c text-white">
+        <h1 class="fw-bold">Find the Best Jobs in Egypt</h1>
+        <h2 class="fs-5 pt-2 pb-3">
+          Searching for vacancies & career opportunities? WUZZUF helps you in
+          your job search in Egypt
+        </h2>
+        <form class="bg-white p-2 rounded-1">
+          <div class="w-100 d-flex align-items-center">
+            <i
+              class="fa-solid fa-magnifying-glass text-primary fw-bold p-3"
+            ></i>
+            <input
+              type="text"
+              class="w-100 border-0 no-outline"
+              [placeholder]="searchPlaceholder[counter]"
+            />
+            <button class="d-h btn btn-primary rounded-1 text-nowrap fs-5">
+              Search Jobs
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <a class="arrow" href="#content">
+    <i class="fa-solid fa-chevron-down"></i>
+  </a>
+  <!-- <div class="arrow">
+    <i class="fa-solid fa-chevron-down"></i>
+  </div> -->
 </div>
