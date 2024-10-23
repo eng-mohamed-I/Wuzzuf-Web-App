@@ -1,0 +1,76 @@
+<div class="main">
+  <p-galleria
+    [value]="blogs"
+    [showIndicators]="true"
+    [showThumbnails]="false"
+    [responsiveOptions]="responsiveOptions"
+    [containerStyle]="{ 'max-width': '1000px' }"
+    [autoPlay]="true"
+  >
+    <ng-template pTemplate="item" let-item>
+      <div class="d-flex">
+        <p>This is new one</p>
+        <img class="s-img" [src]="item.itemImageSrc" style="display: block" />
+      </div>
+    </ng-template>
+  </p-galleria>
+
+  <!-- <div
+    id="carouselExampleInterval"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="w-100 carousel-item active" data-bs-interval="2000">
+        <div class="w-100 d-flex">
+          <div class="col-6">
+            <p>this is one</p>
+          </div>
+          <div class="col-6">
+            <img
+              src="6ec80a93880881b89903eb1ccf2194bb.webp"
+              class="s-img"
+              alt="..."
+            />
+          </div>
+        </div>
+      </div>
+      <div class="w-100 carousel-item" data-bs-interval="1000">
+        <div class="d-flex w-100">
+          <img
+            src="934da6cedfd8bf68a599053f359dd42e.webp"
+            class="s-img"
+            alt="..."
+          />
+        </div>
+      </div>
+      <div class="w-100 carousel-item" data-bs-interval="1000">
+        <div class="w-100">
+          <img
+            src="237608a871f805033cf305c6911c20e5.webp"
+            class="s-img"
+            alt="..."
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
+</div>
