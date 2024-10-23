@@ -1,11 +1,11 @@
-<div class="container-fluid">
+<div class="main container-fluid">
   <div class="container">
     <div class="d-flex flex-column text-center pt-5 pb-5">
-      <h2 class="text-secondary mt-4 mb-4">Join Egypt's Top Companies</h2>
+      <h2 class="text-secondary mt-4 mb-5">Join Egypt's Top Companies</h2>
       <p-carousel
         [value]="logos"
         [numVisible]="6"
-        [numScroll]="6"
+        [numScroll]="2"
         [circular]="true"
         [responsiveOptions]="responsiveOptions"
         autoplayInterval="3000"
@@ -15,7 +15,6 @@
             <div class="mb-3">
               <div class="relative mx-auto">
                 <img
-                
                   [src]="product.itemImageSrc"
                   [alt]="product.name"
                   class="s-img w-full border-round"
