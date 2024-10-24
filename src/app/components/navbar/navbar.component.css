@@ -27,6 +27,8 @@ nav {
 }
 
 .browse-container {
+  box-sizing: border-box;
+  padding: 20px;
   width: 100%;
   height: 70vh;
   left: 0px;
