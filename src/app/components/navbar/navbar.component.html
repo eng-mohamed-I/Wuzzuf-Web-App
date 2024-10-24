@@ -1,0 +1,69 @@
+<nav class="container-fulid">
+  <div class="container d-flex justify-content-between align-items-center p-2">
+    <div class="d-flex align-items-center gap-4">
+      <b class="text-white fs-3 fw-blod" routerLink="/" role="button">WUZZUF</b>
+      <b class="text-white hidden-e" role="button"
+        >Browse Jobs &nbsp;<i class="fa-solid fa-angle-down hidden-e"></i
+      ></b>
+      <b
+        class="text-white fw-blod hidden-e"
+        routerLink="/recruitment/egypt"
+        role="button"
+        >For Employers</b
+      >
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <div
+        class="text-white fw-medium h-e p-2 rounded-1 hidden-e"
+        role="button"
+        routerLink="/employer/register"
+      >
+        <i class="fa-solid fa-suitcase"></i>
+        &nbsp;Post Job
+      </div>
+      <span class="text-white fw-blod h-100 hidden-e">|&nbsp;</span>
+      <button
+        class="btn text-white btn-outline-light rounded-1 no-wrap fw-medium h-e"
+        routerLink="/login"
+      >
+        Log in
+      </button>
+      <button
+        class="btn btn-primary rounded-1 fw-medium hidden-e"
+        routerLink="/register"
+      >
+        Get Started
+      </button>
+      <div
+        class="position-relative h-e py-1 px-2 rounded-1 trans-e"
+        role="button"
+        (click)="showHideSettingFullScreen()"
+        [ngClass]="settingFullScreen ? 'bg-dark' : ''"
+      >
+        <i class="fa-solid fa-bars text-white fw-blod"></i>
+        @if(settingFullScreen){
+        <div
+          class="position-absolute end-0 top-100 mt-3 card rounded-1 shadow-lg text-black"
+          style="font-size: 14px; font-family: sans-serif"
+        >
+          <div class="col-12 text-nowrap rounded-1 p-2 s-h">Carear Reading</div>
+          <div class="col-12 text-nowrap rounded-1 p-2 s-h">Help Center</div>
+          <div class="col-12 text-nowrap rounded-1 p-2 s-h">About Us</div>
+          <div class="col-12 text-nowrap rounded-1 p-2 s-h">Contact Us</div>
+          <hr style="padding: 0px; margin: 0px" class="text-secondary" />
+          <div
+            class="d-flex justify-content-between gap-3 align-items-center text-secondary"
+          >
+            <div class="text-nowrap p-2 fw-bold">FOLLOW US</div>
+            <div class="fs-4 d-flex felx-row gap-3 p-3">
+              <i class="fa-brands fa-square-facebook"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-square-x-twitter"></i>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</nav>

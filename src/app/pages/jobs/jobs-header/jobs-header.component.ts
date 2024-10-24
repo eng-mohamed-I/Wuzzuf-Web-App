@@ -16,9 +16,7 @@ export class JobsHeaderComponent implements OnInit {
   ];
   counter: number = 0;
 
-  constructor(@Inject(PLATFORM_ID) private _paltformId: object) {
-    // this.displayCounter();
-  }
+  constructor(@Inject(PLATFORM_ID) private _paltformId: object) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this._paltformId)) {

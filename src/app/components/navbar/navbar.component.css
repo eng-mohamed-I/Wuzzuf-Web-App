@@ -1,0 +1,29 @@
+nav {
+  z-index: 99999;
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  box-sizing: border-box;
+}
+
+.h-e,
+.s-h {
+  transition: all 0.2s ease;
+}
+
+.s-h:hover {
+  background-color: rgba(110, 214, 255, 0.245);
+}
+
+.h-e:hover {
+  background-color: rgba(6, 6, 6, 0.443);
+}
+
+@media (max-width: 1000px) {
+  .hidden-e {
+    display: none;
+  }
+}
