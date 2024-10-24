@@ -12,12 +12,14 @@ import { BrowseJobsComponent } from './browse-jobs/browse-jobs.component';
 })
 export class NavbarComponent {
   settingFullScreen: boolean = false;
-  browserJobsSetting: boolean = false;
+  browserJobsSetting: boolean = true;
 
   showHideSettingFullScreen() {
     this.settingFullScreen = this.settingFullScreen === false ? true : false;
+    this.browserJobsSetting = false;
   }
   browserJobsSettingVisibilty() {
     this.browserJobsSetting = this.browserJobsSetting === false ? true : false;
+    this.settingFullScreen = false;
   }
 }
