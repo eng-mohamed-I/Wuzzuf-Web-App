@@ -3,6 +3,7 @@ import { JobsHeaderComponent } from './jobs-header/jobs-header.component';
 import { TopCompaniesComponent } from './top-companies/top-companies.component';
 import { JobsGalleriaComponent } from './jobs-galleria/jobs-galleria.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-jobs',
@@ -12,6 +13,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
     TopCompaniesComponent,
     JobsGalleriaComponent,
     NavbarComponent,
+    FooterComponent,
   ],
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.css',
