@@ -14,9 +14,6 @@ export class FooterComponent implements OnInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.date = this.date.getFullYear();
-      console.log(this.date);
-    }
+    this.date = this.date.getFullYear();
   }
 }
