@@ -4,6 +4,7 @@ import { TopCompaniesComponent } from './top-companies/top-companies.component';
 import { JobsGalleriaComponent } from './jobs-galleria/jobs-galleria.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { LatestJobsComponent } from './latest-jobs/latest-jobs.component';
 
 @Component({
   selector: 'app-jobs',
@@ -14,6 +15,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
     JobsGalleriaComponent,
     NavbarComponent,
     FooterComponent,
+    LatestJobsComponent,
   ],
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.css',
